@@ -1,33 +1,96 @@
+@import './node_modules/bootstrap/scss/bootstrap';
 @import "./contactenos";
 @import "./empleos";
+@import "./variables";
+@import "./reset";
 
 
+// Estilos para el encabezado
+.hero-nav {
+  background-color: $secondary-color; // 
+  color: #fff; // Color del texto
+  padding: 10px 20px; // Relleno interno del encabezado
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-.nav-hero{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-    padding: 1rem;
-    background-color: #333;
-    color: #fff;
+  h1 {
+      font-size: 30px; // 
+      margin: 0; // 
+  }
+
+  nav {
+      display: flex;
+
+      .search-bar {
+          margin-right: 10px; // Espaciado entre la barra de búsqueda y los elementos de la lista
+          input {
+              padding: 6px 10px; 
+              font-size: 14px;
+              transition: border-color 0.3s ease;
+                &:hover {
+                    border-color: #28a745;
+                }
+
+          }
+
+          button {
+              background-color: $button-color; // Color de fondo del botón
+              padding: 6px 12px;
+              color: black; // Color del texto del botón
+              font-size: 14px;
+              cursor: pointer; // Cambia el cursor al pasar sobre el botón
+              transition: background-color 0.3s ease, color 0.3s ease;
+                &:hover {
+                    background-color: #218838;
+                }
+              
+          }
+      }
+
+      // Estilos para los elementos de la lista dentro de .nav-item
+.nav-item {
+  list-style: none; // Elimina los marcadores de lista
+  margin: 0;
+  padding: 0;
+
+  li {
+      display: inline-block; // Muestra los elementos de la lista en línea
+      margin-right: 20px; // Espaciado entre los elementos de la lista
+      position: relative;
+
+      a {
+          text-decoration: none; // Elimina la subrayado de los enlaces
+          color: #b6adad; // Color del texto de los enlaces
+          font-weight: bold; // Establece el peso de la fuente a negrita
+          transition: color 0.3s ease; // Efecto de transición para el color del texto
+          padding: 10px 0;
+
+          &:hover {
+              color: #28a745; // Cambia el color del texto al pasar sobre el enlace
+          }
+
+          &::before {
+              content: ''; // Crea un pseudo elemento antes del enlace
+              position: absolute;
+              width: 0;
+              height: 2px;
+              background-color: #28a745; // Color de la línea de subrayado
+              bottom: 0;
+              left: 0;
+              transition: width 0.3s ease; // Efecto de transición para la anchura de la línea
+          }
+
+          &:hover::before {
+              width: 100%; // Anima la anchura de la línea al pasar sobre el enlace
+          }
+      }
+  
 }
-.nav-hero nav{
-    display: flex;
-    gap: 1rem;
-    
-}
-.nav-hero nav ul li{
-    list-style: none;
-    
-}
-.nav-hero nav ul li a{
-    text-decoration: none;
-    color: #fff;
-}
 
-
-//**********BOOSTRAP**********//
+      }
+  }
+}
 
 *, *:before, *:after {
     -moz-box-sizing: border-box;
@@ -48,7 +111,7 @@
     border-radius: 8px;
   }
   
-  h1 {
+  h2 {
     margin: 0 0 30px 0;
     text-align: center;
   }
@@ -138,6 +201,11 @@
     text-shadow: 0 1px 0 rgba(255,255,255,0.2);
     border-radius: 100%;
   }
+ 
+ 
+
+
+  /*********MediaQuery**********/
   
   @media screen and (min-width: 480px) {
   
@@ -146,4 +214,21 @@
     }
   
   }
+
+  @media screen and (max-width: 768px) {
+    .search-bar {
+        display: none; // Oculta el search-bar
+    }
+
+    ul.nav-item {
+        display: block; // Muestra el nav-item en bloques
+        text-align: center; // Centra los elementos de la lista
+        margin-top: 10px; // Espaciado superior para separar el nav-item del título
+        li {
+            display: block; // Muestra los enlaces en bloques
+            margin: 10px 0; // Espaciado entre los enlaces
+        }
+    }
+}
+
   

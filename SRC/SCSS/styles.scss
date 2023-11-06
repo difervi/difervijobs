@@ -4,130 +4,131 @@
 @import "./variables";
 @import "./reset";
 
-
 // Estilos para el encabezado
 .hero-nav {
-  background-color: $secondary-color; // 
-  color: #fff; // Color del texto
-  padding: 10px 20px; // Relleno interno del encabezado
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    background-color: $secondary-color;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-  h1 {
-      font-size: 30px; // 
-      margin: 0; // 
-  }
+    h1 {
+        font-size: 30px;
+        margin: 0;
+    }
 
-  nav {
-      display: flex;
+    nav {
+        display: flex;
 
-      .search-bar {
-          margin-right: 10px; // Espaciado entre la barra de búsqueda y los elementos de la lista
-          input {
-              padding: 6px 10px; 
-              font-size: 14px;
-              transition: border-color 0.3s ease;
+        .search-bar {
+            margin-right: 10px;
+
+            input {
+                padding: 6px 10px;
+                font-size: 14px;
+                transition: border-color 0.3s ease;
+
                 &:hover {
                     border-color: #28a745;
                 }
+            }
 
-          }
+            button {
+                background-color: $button-color;
+                padding: 6px 12px;
+                color: black;
+                font-size: 14px;
+                cursor: pointer;
+                transition: background-color 0.3s ease, color 0.3s ease;
 
-          button {
-              background-color: $button-color; // Color de fondo del botón
-              padding: 6px 12px;
-              color: black; // Color del texto del botón
-              font-size: 14px;
-              cursor: pointer; // Cambia el cursor al pasar sobre el botón
-              transition: background-color 0.3s ease, color 0.3s ease;
                 &:hover {
                     background-color: #218838;
                 }
-              
-          }
-      }
+            }
+        }
+    }
 
-      // Estilos para los elementos de la lista dentro de .nav-item
-.nav-item {
-  list-style: none; // Elimina los marcadores de lista
-  margin: 0;
-  padding: 0;
+    // Estilos para los elementos de la lista dentro de .nav-item
+    .nav-item {
+        list-style: none;
+        margin: 0;
+        padding: 0;
 
-  li {
-      display: inline-block; // Muestra los elementos de la lista en línea
-      margin-right: 20px; // Espaciado entre los elementos de la lista
-      position: relative;
+        li {
+            display: inline-block;
+            margin-right: 20px;
+            position: relative;
 
-      a {
-          text-decoration: none; // Elimina la subrayado de los enlaces
-          color: #b6adad; // Color del texto de los enlaces
-          font-weight: bold; // Establece el peso de la fuente a negrita
-          transition: color 0.3s ease; // Efecto de transición para el color del texto
-          padding: 10px 0;
+            a {
+                text-decoration: none;
+                color: #b6adad;
+                font-weight: bold;
+                transition: color 0.3s ease;
+                padding: 10px 0;
 
-          &:hover {
-              color: #28a745; // Cambia el color del texto al pasar sobre el enlace
-          }
+                &:hover {
+                    color: #28a745;
+                }
 
-          &::before {
-              content: ''; // Crea un pseudo elemento antes del enlace
-              position: absolute;
-              width: 0;
-              height: 2px;
-              background-color: #28a745; // Color de la línea de subrayado
-              bottom: 0;
-              left: 0;
-              transition: width 0.3s ease; // Efecto de transición para la anchura de la línea
-          }
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 0;
+                    height: 2px;
+                    background-color: #28a745;
+                    bottom: 0;
+                    left: 0;
+                    transition: width 0.3s ease;
+                }
 
-          &:hover::before {
-              width: 100%; // Anima la anchura de la línea al pasar sobre el enlace
-          }
-      }
-  
+                &:hover::before {
+                    width: 100%;
+                }
+            }
+        }
+    }
 }
 
-      }
-  }
-}
+
+
 
 *, *:before, *:after {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-  }
-  
-  body {
+}
+
+body {
     font-family: 'Nunito', sans-serif;
     color: #384047;
-  }
-  
-  form {
+}
+
+form {
     max-width: 300px;
     margin: 10px auto;
     padding: 10px 20px;
     background: #f4f7f8;
     border-radius: 8px;
-  }
-  
-  h2 {
+}
+
+h2 {
     margin: 0 0 30px 0;
     text-align: center;
-  }
-  
-  input[type="text"],
-  input[type="password"],
-  input[type="date"],
-  input[type="datetime"],
-  input[type="email"],
-  input[type="number"],
-  input[type="search"],
-  input[type="tel"],
-  input[type="time"],
-  input[type="url"],
-  textarea,
-  select {
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea,
+select {
     background: rgba(255,255,255,0.1);
     border: none;
     font-size: 16px;
@@ -140,23 +141,23 @@
     color: #8a97a0;
     box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
     margin-bottom: 30px;
-  }
-  
-  input[type="radio"],
-  input[type="checkbox"] {
+}
+
+input[type="radio"],
+input[type="checkbox"] {
     margin: 0 4px 8px 0;
-  }
-  
-  select {
+}
+
+select {
     padding: 6px;
     height: 32px;
     border-radius: 2px;
-  }
-  
-  button {
+}
+
+button {
     padding: 19px 39px 18px 39px;
     color: #FFF;
-    background-color: #4bc970;
+    background-color: $secondary-color;
     font-size: 18px;
     text-align: center;
     font-style: normal;
@@ -166,29 +167,29 @@
     border-width: 1px 1px 3px;
     box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
     margin-bottom: 10px;
-  }
-  
-  fieldset {
+}
+
+fieldset {
     margin-bottom: 30px;
     border: none;
-  }
-  
-  legend {
+}
+
+legend {
     font-size: 1.4em;
     margin-bottom: 10px;
-  }
-  
-  label {
+}
+
+label {
     display: block;
     margin-bottom: 8px;
-  }
-  
-  label.light {
+}
+
+label.light {
     font-weight: 300;
     display: inline;
-  }
-  
-  .number {
+}
+
+.number {
     background-color: #5fcf80;
     color: #fff;
     height: 30px;
@@ -200,35 +201,112 @@
     text-align: center;
     text-shadow: 0 1px 0 rgba(255,255,255,0.2);
     border-radius: 100%;
-  }
- 
- 
+}
+.sec-img{
+  margin: 5px;
+  padding: 10px;
+  background-color: $secondary-color;
+  border: #e8eeef;
+  border-radius: 5px;
+}
 
 
-  /*********MediaQuery**********/
-  
-  @media screen and (min-width: 480px) {
-  
-    form {
-      max-width: 480px;
+.sec-img div img {
+  width: 200px; /* Establece un ancho fijo para todas las imágenes */
+  height: auto; /* Mantiene la proporción de la imagen */
+  object-fit: cover; /* Escala la imagen para cubrir el contenedor manteniendo las proporciones */
+  border-radius: 10px;
+  margin: 8px;
+  padding: 5px;
+  max-width: 200px;
+}
+
+/* Establece un tamaño fijo para el contenedor de las imágenes */
+.sec-img div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.btns{
+  background-color: $button-color;
+  padding: 6px 12px;
+  color: black;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+  background-color: #218838;
     }
-  
   }
 
-  @media screen and (max-width: 768px) {
+/***********footer************/
+
+/* Estilos para el footer */
+footer {
+    background-color: #333; /* Fondo del footer */
+    color: #fff; /* Color del texto en el footer */
+    padding: 20px 0; /* Espaciado interno del footer */
+    text-align: center; /* Alineación del texto en el centro */
+  }
+  
+  footer div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  /* Estilos para los íconos de redes sociales */
+  footer i {
+    font-size: 24px; /* Tamaño de los íconos */
+    margin: 0 10px; /* Espaciado entre los íconos */
+    transition: transform 0.3s ease; /* Efecto de rebote en los íconos */
+  }
+  
+  /* Efecto de rebote en los íconos al pasar el mouse */
+  footer i:hover {
+    transform: scale(1.2); /* Escala el ícono al 120% */
+  }
+  
+  /* Estilos específicos para los íconos de redes sociales */
+  .fa-facebook { color: #1877f2; } /* Color de Facebook */
+  .fa-twitter { color: #1da1f2; } /* Color de Twitter */
+  .fa-instagram { color: #bc2a8d; } /* Color de Instagram */
+  .fa-linkedin { color: #0077b5; } /* Color de LinkedIn */
+  
+
+/*********MediaQuery**********/
+
+@media screen and (min-width: 480px) {
+    form {
+        max-width: 480px;
+    }
+    
+}
+
+@media screen and (max-width: 1100px) {
     .search-bar {
-        display: none; // Oculta el search-bar
+        display: none;
     }
 
     ul.nav-item {
-        display: block; // Muestra el nav-item en bloques
-        text-align: center; // Centra los elementos de la lista
-        margin-top: 10px; // Espaciado superior para separar el nav-item del título
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+
         li {
-            display: block; // Muestra los enlaces en bloques
-            margin: 10px 0; // Espaciado entre los enlaces
+            display: block;
+            margin: 10px 0;
         }
     }
+    .sec-img div{
+      flex-direction: column;
+      align-items: center;
+    }
+    .sec-img div img{
+      max-width: 100%;
+    }
 }
-
-  

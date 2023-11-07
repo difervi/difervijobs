@@ -7,124 +7,72 @@
     <title>Bienvenido a Difervi Jobs</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../DIST/CSS/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../DIST/CSS/styles.css">
+   
 </head>
 
 <body>
     <header class="hero-nav">
-        <h1>DIFERVI JOBS</h1>
+        <div class="logo">
+            <h1><img src="./IMG/Captura_de_pantalla_2023-11-07_103810-removebg-preview.png" alt=""></h1>
+        </div>
         <nav>
-            <div class="search-bar">
-                <input type="text" placeholder="Buscar...">
-                <button type="submit">Buscar</button>
-            </div>
             <ul class="nav-item">
+                <li><a href="./index.html">Inicio</a></li>
                 <li><a href="./pages/Empleos.html">Empleos</a></li>
                 <li><a href="./pages/Contactenos.html">Contactenos</a></li>
-                <li><a href="./index.html">Inicio</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section class="text">
-            <p class="parrafo">En nuestro portal de empleo encontraras muchas empresas y oportunidades para conseguir el empleo que
-                tanto sueñas, permite que nosotros lo hagamos por ti, nuestros profesionales revisaran y te contactaran
-                con brevedad para iniciar con la primer etapa laboral. </p>
-        </section>
-        <section>
-            <div class="row">
-                <div class="col-md-12">
-                    <form action="index.html" method="post">
-                        <h2> Registrate </h2>
-                        <fieldset>
-                            <legend><span class="number">1</span> Tu Informacion basica</legend>
-
-                            <label for="name">Nombre:</label>
-                            <input type="text" id="name" name="user_name">
-
-                            <label for="email">Correo Electronico:</label>
-                            <input type="email" id="mail" name="user_email">
-
-                            <label for="password">Contraseña:</label>
-                            <input type="password" id="password" name="user_password">
-
-                            <label>Edad:</label>
-                            <input type="radio" id="under_13" value="under_13" name="user_age"><label for="under_13"
-                                class="light">Menor de 15</label><br>
-                            <input type="radio" id="over_13" value="over_13" name="user_age"><label for="over_13"
-                                class="light">Mayor de 18</label>
-
-                        </fieldset>
-                        <fieldset>
-
-                            <legend><span class="number">2</span> Tu Perfil</legend>
-
-                            <label for="bio">Acerca de ti:</label>
-                            <textarea id="bio" name="user_bio"></textarea>
-
-
-
-                            <label for="job">Job Role:</label>
-                            <select id="job" name="user_job">
-                                <optgroup label="Web">
-                                    <option value="frontend_developer">Front-End Developer</option>
-                                    <option value="php_developer">PHP Developer</option>
-                                    <option value="python_developer">Python Developer</option>
-                                    <option value="rails_developer">Rails Developer</option>
-                                    <option value="web_designer">Web Designer</option>
-                                    <option value="wordpress_developer">Wordpress Developer</option>
-                                </optgroup>
-                                <optgroup label="Mobile">
-                                    <option value="android_developer">Android Developer</option>
-                                    <option value="ios_developer">IOS Developer</option>
-                                    <option value="mobile_designer">Mobile Designer</option>
-                                </optgroup>
-                                <optgroup label="Business">
-                                    <option value="business_owner">Business Owner</option>
-                                    <option value="freelancer">Freelancer</option>
-                                </optgroup>
-                            </select>
-
-                            <label>Intereses:</label>
-                            <input type="checkbox" id="development" value="interest_development"
-                                name="user_interest"><label class="light" for="development">Desarrollo</label>
-                            <br>
-                            <input type="checkbox" id="design" value="interest_design" name="user_interest"><label
-                                class="light" for="design">Diseño</label><br>
-                            <input type="checkbox" id="business" value="interest_business" name="user_interest"><label
-                                class="light" for="business">Negocios</label>
-
-                        </fieldset>
-
-                        <button type="submit">Continuar</button>
-
-                    </form>
+        <div class="hero-text">
+            <p>¡Encontremos el empleo de tus sueños!</p>
+        </div>
+        <section class="search-section">
+            <div class="search-bar">
+                <div class="search-input">
+                    <label for="cargo"></label><i class="fa-sharp fa-solid fa-briefcase fa-xl"></i>
+                    <input type="text" id="cargo" placeholder="Cargo o Categoría">
                 </div>
-        </section>
-        <section>
-            <p>En nuestro portal de empleo encontraras muchas empresas y oportunidades para conseguir el empleo que
-                tanto sueñas, permite que nosotros lo hagamos por ti, nuestros profesionales revisaran y te contactaran
-                con brevedad para iniciar con la primer etapa laboral. </p>
+                <div class="search-input">
+                    <label for="lugar"></label><i class="fa-sharp fa-solid fa-location-dot fa-xl"></i>
+                    <input type="text" id="lugar" placeholder="Lugar">
+                </div>
+                <button type="submit">Buscar Empleo</button>
+            </div>
         </section>
         <section class="sec-img">
-            <div>
-                <img src="./IMG/cobis.jpeg" alt="tp">
+            <div class="img-container">
+                <img src="./IMG/cobis.jpeg" alt="cobis">
                 <img src="./IMG/stefanini.jpg" alt="st">
                 <img src="./IMG/globant-vector-logo.png" alt="glob">
                 <img src="./IMG/oracle.png" alt="oracle">
-                <img src="./IMG/teleperformance.png" alt="">
+                <img src="./IMG/Teleperformance-162x88-v2.png" alt="tp">
+                <img src="./IMG/konecta.jpeg" alt="konecta">
+                <img src="./IMG/colombina.png" alt="">
+                <img src="./IMG/corp-univ-asturias.jpg" alt="">
+                <img src="./IMG/prospera-162x88.png" alt="">
+                <img src="./IMG/sutherland-162x88.png" alt="">
             </div>
-            <button class="btns">Ver Mas Empresas</button>
         </section>
+        <div class="oportunidad-container">
+            <section class="oportunidad">
+                <h2>Explorando Oportunidades Laborales</h2>
+                <p>Descubre un futuro profesional prometedor con nuestra ayuda. Te ofrecemos la oportunidad de destacarte ante numerosas empresas en nuestra plataforma de empleo.</p>
+                <p>Potencia tu carrera con nosotros y haz que tu currículum sea visible para miles de empleadores. Regístrate de forma gratuita y encuentra el trabajo perfecto para ti.</p>
+                <a href="#" class="cta-button">Crea tu cuenta gratis</a>
+            </section>
+        </div>
     </main>
     <footer>
-        <p>2023 DIFERVI JOBS</p><br>
+        <p>2023 DIFERVI JOBS</p>
         <div>
             <i class="fa-brands fa-facebook fa-bounce"></i>
             <i class="fa-brands fa-twitter fa-bounce"></i>
             <i class="fa-brands fa-instagram fa-bounce"></i>
             <i class="fa-brands fa-linkedin fa-bounce"></i>
+            
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

@@ -6,12 +6,20 @@
 
 // Estilos para el encabezado
 .hero-nav {
-    background-color: $secondary-color;
-    color: #fff;
-    padding: 10px 20px;
+    background-color: rgba(3, 5, 94, 0.918);
+    border-bottom-left-radius: 60%;
+    border-bottom-right-radius: 60%;
+    overflow: hidden;
+    color: white;
+    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: background-color 0.5s ease;
+
+    .hero-nav:hover {
+        background-color: #2980b9;
+    }
 
     h1 {
         font-size: 30px;
@@ -21,69 +29,49 @@
     nav {
         display: flex;
 
-        .search-bar {
-            margin-right: 10px;
 
-            input {
-                padding: 6px 10px;
-                font-size: 14px;
-                transition: border-color 0.3s ease;
-
-                &:hover {
-                    border-color: #28a745;
-                }
-            }
-
-            button {
-                background-color: $button-color;
-                padding: 6px 12px;
-                color: black;
-                font-size: 14px;
-                cursor: pointer;
-                transition: background-color 0.3s ease, color 0.3s ease;
-
-                &:hover {
-                    background-color: #218838;
-                }
-            }
+        .text {
+            padding: 20px;
+            text-align: center;
         }
-    }
 
-    // Estilos para los elementos de la lista dentro de .nav-item
-    .nav-item {
-        list-style: none;
-        margin: 0;
-        padding: 0;
+        // Estilos para los elementos de la lista dentro de .nav-item
+        .nav-item {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
 
-        li {
-            display: inline-block;
-            margin-right: 20px;
-            position: relative;
+            li {
+                margin-right: 20px;
 
-            a {
-                text-decoration: none;
-                color: #b6adad;
-                font-weight: bold;
-                transition: color 0.3s ease;
-                padding: 10px 0;
 
-                &:hover {
-                    color: #28a745;
-                }
+                a {
+                    text-decoration: none;
+                    color: #b6adad;
+                    font-weight: bold;
+                    transition: color 0.3s ease;
+                    padding: 10px 0;
 
-                &::before {
-                    content: '';
-                    position: absolute;
-                    width: 0;
-                    height: 2px;
-                    background-color: #28a745;
-                    bottom: 0;
-                    left: 0;
-                    transition: width 0.3s ease;
-                }
+                    &:hover {
+                        color: #28a745;
+                    }
 
-                &:hover::before {
-                    width: 100%;
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 0;
+                        height: 2px;
+                        background-color: #28a745;
+                        bottom: 0;
+                        left: 0;
+                        transition: width 0.3s ease;
+                    }
+
+                    &:hover::before {
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -91,9 +79,186 @@
 }
 
 
+.nav-item li:last-child {
+    margin-right: 0;
+}
 
 
-*, *:before, *:after {
+.logo img {
+    width: 300px;
+    height: auto;
+
+}
+
+//*********searchbar********///
+
+.search-section {
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: $secondary-color;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para las secciones */
+.search-section,
+.sec-img {
+    position: relative;
+}
+
+/* Estilos para la línea divisoria en la primera sección */
+.search-section .divider {
+    left: 0;
+}
+
+/* Estilos para la línea divisoria en la segunda sección */
+.sec-img .divider {
+    right: 0;
+}
+
+
+.search-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    margin: 10px;
+}
+
+.search-input {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    /* Para hacer los campos de entrada ovalados */
+}
+
+button[type="submit"] {
+    width: calc(100% - 20px);
+    padding: 12px 40px;
+    font-size: 16px;
+    border: none;
+    border-radius: 15px;
+    /* Para hacer el botón ovalado */
+    background-color: $button-color;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: $hover-button;
+}
+
+
+.hero-text {
+    text-align: center;
+    color: white;
+    background-color: $primary-color;
+    /* Color de fondo del texto */
+    padding: 20px;
+    margin-top: 30px;
+    font-size: 50px;
+}
+
+.search-input input[type="text"] {
+    width: calc(100% - 40px);
+    padding: 10px 40px 10px 40px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    position: relative;
+}
+
+.search-input input[type="text"]::placeholder {
+    font-family: 'Font Awesome 5 Free';
+    /* Fuente de iconos */
+    font-weight: 900;
+    /* Peso de la fuente para asegurar que se muestre correctamente */
+}
+
+/* Estilo específico para el icono del placeholder */
+.search-input::before {
+    font-family: 'Font Awesome 5 Free';
+    /* Fuente de iconos */
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #888;
+    z-index: 1;
+}
+
+/************OPORTUNIDADES********************/
+
+.oportunidad-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.oportunidad {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #007bff;
+    }
+
+    p {
+        font-size: 18px;
+        margin-bottom: 30px;
+        color: #555;
+    }
+
+    .cta-button {
+        background-color: $button-color;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-size: 18px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: $hover-button;
+        }
+    }
+}
+
+
+//***********REGISTRO PAGINA INICIO**********//
+
+*,
+*:before,
+*:after {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -129,7 +294,7 @@ input[type="time"],
 input[type="url"],
 textarea,
 select {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     border: none;
     font-size: 16px;
     height: auto;
@@ -139,7 +304,7 @@ select {
     width: 100%;
     background-color: #e8eeef;
     color: #8a97a0;
-    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
     margin-bottom: 30px;
 }
 
@@ -165,7 +330,7 @@ button {
     width: 100%;
     border: 1px solid #3ac162;
     border-width: 1px 1px 3px;
-    box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+    box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
     margin-bottom: 10px;
 }
 
@@ -199,84 +364,72 @@ label.light {
     margin-right: 4px;
     line-height: 30px;
     text-align: center;
-    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
     border-radius: 100%;
 }
-.sec-img{
-  margin: 5px;
-  padding: 10px;
-  background-color: $secondary-color;
-  border: #e8eeef;
-  border-radius: 5px;
+
+//************Imagenes-Grids***********//
+.sec-img {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.959);
 }
 
-
-.sec-img div img {
-  width: 200px; /* Establece un ancho fijo para todas las imágenes */
-  height: auto; /* Mantiene la proporción de la imagen */
-  object-fit: cover; /* Escala la imagen para cubrir el contenedor manteniendo las proporciones */
-  border-radius: 10px;
-  margin: 8px;
-  padding: 5px;
-  max-width: 200px;
+.img-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 162px);
+    gap: 60px;
+    /* Espaciado entre las tarjetas */
 }
 
-/* Establece un tamaño fijo para el contenedor de las imágenes */
-.sec-img div {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-bottom: 20px;
+.img-container img {
+    width: 100%;
+    height: 88px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    border-radius: 8px;
 }
-
-.btns{
-  background-color: $button-color;
-  padding: 6px 12px;
-  color: black;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-
-  &:hover {
-  background-color: #218838;
-    }
-  }
 
 /***********footer************/
 
 /* Estilos para el footer */
 footer {
-    background-color: #333; /* Fondo del footer */
-    color: #fff; /* Color del texto en el footer */
-    padding: 20px 0; /* Espaciado interno del footer */
-    text-align: center; /* Alineación del texto en el centro */
-  }
-  
-  footer div {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0; 
+    text-align: center;
+}
+
+footer div {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 10px;
-  }
-  
-  /* Estilos para los íconos de redes sociales */
-  footer i {
-    font-size: 24px; /* Tamaño de los íconos */
-    margin: 0 10px; /* Espaciado entre los íconos */
-    transition: transform 0.3s ease; /* Efecto de rebote en los íconos */
-  }
-  
-  /* Efecto de rebote en los íconos al pasar el mouse */
-  footer i:hover {
-    transform: scale(1.2); /* Escala el ícono al 120% */
-  }
-  
-  /* Estilos específicos para los íconos de redes sociales */
-  .fa-facebook { color: #1877f2; } /* Color de Facebook */
-  .fa-twitter { color: #1da1f2; } /* Color de Twitter */
-  .fa-instagram { color: #bc2a8d; } /* Color de Instagram */
-  .fa-linkedin { color: #0077b5; } /* Color de LinkedIn */
-  
+}
+
+footer i {
+    font-size: 24px;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+footer i:hover {
+    transform: scale(1.2);
+}
+
+.fa-facebook {
+    color: #1877f2;
+}
+
+.fa-twitter {
+    color: #1da1f2;
+}
+.fa-instagram {
+    color: #bc2a8d;
+}
+
+.fa-linkedin {
+    color: #0077b5;
+}
 
 /*********MediaQuery**********/
 
@@ -284,13 +437,12 @@ footer {
     form {
         max-width: 480px;
     }
-    
+
+
 }
 
 @media screen and (max-width: 1100px) {
-    .search-bar {
-        display: none;
-    }
+
 
     ul.nav-item {
         display: block;
@@ -302,11 +454,89 @@ footer {
             margin: 10px 0;
         }
     }
-    .sec-img div{
-      flex-direction: column;
-      align-items: center;
+
+    .sec-img div {
+        flex-direction: column;
+        align-items: center;
     }
-    .sec-img div img{
-      max-width: 100%;
+
+    .sec-img div img {
+        max-width: 100%;
     }
+}
+
+@media (max-width: 768px) {
+    .search-section {
+        max-width: 90%;
+        
+    }
+    .hero-nav{
+        display: block;
+    }
+    .search-input input[type="text"] {
+        width: calc(100% - 20px);
+        /* Reduce el ancho del campo de entrada en pantallas más pequeñas */
+    }
+
+    .button[type="submit"] {
+        padding: 12px 20px;
+        /* Ajusta el padding del botón en pantallas más pequeñas */
+    }
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+        text-align: center;
+        background-color: #007bff;
+        color: white;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .hero-text {
+        font-size: 18px;
+        /* Reduce el tamaño del texto en pantallas muy pequeñas */
+    }
+
+    .search-input input[type="text"] {
+        width: calc(100% - 10px);
+        /* Reduce aún más el ancho del campo de entrada en pantallas muy pequeñas */
+    }
+
+    .button[type="submit"] {
+        padding: 12px 15px;
+        /* Ajusta el padding del botón en pantallas muy pequeñas */
+    }
+}
+
+
+/*******ANIMACIONES**********/
+
+@keyframes underline {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.nav-item a {
+    position: relative;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.nav-item a:hover::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #007bff;
+    bottom: 0;
+    left: 0;
+    animation: underline 0.3s ease;
 }

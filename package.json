@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile:sass": "sass src/styles.scss dist/css/styles.css",
+    "compile:sass": "sass src/scss/styles.scss dist/css/styles.css",
     "watch:sass": "node-sass src/scss/styles.scss dist/css/styles.css --watch",
     "start": "webpack --mode development",
     "build": "webpack --mode production"
+
   },
   "keywords": [],
   "author": "",

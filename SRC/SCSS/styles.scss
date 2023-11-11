@@ -1,4 +1,3 @@
-@import './node_modules/bootstrap/scss/bootstrap';
 @import "./contactenos";
 @import "./empleos";
 @import "./variables";
@@ -187,7 +186,6 @@ button[type="submit"]:hover {
 }
 
 .search-input input[type="text"]::placeholder {
-    font-family: 'Font Awesome 5 Free';
     /* Fuente de iconos */
     font-weight: 900;
     /* Peso de la fuente para asegurar que se muestre correctamente */
@@ -195,7 +193,6 @@ button[type="submit"]:hover {
 
 /* Estilo específico para el icono del placeholder */
 .search-input::before {
-    font-family: 'Font Awesome 5 Free';
     /* Fuente de iconos */
     position: absolute;
     left: 10px;
@@ -344,10 +341,6 @@ legend {
     margin-bottom: 10px;
 }
 
-label {
-    display: block;
-    margin-bottom: 8px;
-}
 
 label.light {
     font-weight: 300;
@@ -466,13 +459,75 @@ footer i:hover {
 }
 
 @media (max-width: 768px) {
+    
+    /* Estilos para tamaños de pantalla más pequeños */
+@media (max-width: 768px) {
+    .hero-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .hero-nav nav {
+        display: none;
+        width: 100%;
+        text-align: left;
+        margin-top: 20px;
+        position: absolute;
+        background-color: rgba(3, 5, 94, 0.918);
+        border-bottom-left-radius: 60%;
+        border-bottom-right-radius: 60%;
+        padding: 10px;
+    }
+
+    .hero-nav .nav-item {
+        flex-direction: column;
+    }
+
+    .hero-nav .nav-item li {
+        margin: 0;
+        text-align: center;
+    }
+
+    .hero-nav .nav-item li a {
+        display: block;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+    }
+
+    .hero-nav .nav-toggle {
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+        background-color: #2980b9;
+        color: white;
+        border: none;
+        text-align: left;
+    }
+
+    #nav-toggle {
+        display: none; /* Ocultar el checkbox */
+    }
+
+    #nav-toggle:checked + label + nav {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+    }
+}
+
+
     .search-section {
         max-width: 90%;
         
     }
-    .hero-nav{
-        display: block;
-    }
+    
     .search-input input[type="text"] {
         width: calc(100% - 20px);
         /* Reduce el ancho del campo de entrada en pantallas más pequeñas */
@@ -490,6 +545,7 @@ footer i:hover {
         background-color: #007bff;
         color: white;
     }
+    
     
 }
 

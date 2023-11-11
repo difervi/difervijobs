@@ -428,20 +428,16 @@ footer i:hover {
 
 /*********MediaQuery**********/
 
+/* Media Query para pantallas de al menos 480px de ancho */
 @media screen and (min-width: 480px) {
     form {
         max-width: 480px;
     }
-  
-
 }
 
+/* Media Query para pantallas de hasta 1100px de ancho */
 @media screen and (max-width: 1100px) {
-
-    .hero-nav .nav-toggle {
-        display: none;
-    }
-
+    .hero-nav .nav-toggle,
     #nav-toggle {
         display: none;
     }
@@ -460,90 +456,27 @@ footer i:hover {
     .sec-img div {
         flex-direction: column;
         align-items: center;
-    }
 
-    .sec-img div img {
-        max-width: 100%;
+        img {
+            max-width: 100%;
+        }
     }
 }
 
+/* Media Query para pantallas de hasta 768px de ancho */
 @media (max-width: 768px) {
-    
-    .hero-nav {
-        flex-direction: column;
-        align-items: flex-start;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-
-    .hero-nav nav {
-        display: none;
-        width: 100%;
-        text-align: left;
-        margin-top: 20px;
-        position: absolute;
-        background-color: rgba(3, 5, 94, 0.918);
-        border-bottom-left-radius: 60%;
-        border-bottom-right-radius: 60%;
-        padding: 10px;
-    }
-
-    .hero-nav .nav-item {
-        flex-direction: column;
-    }
-
-    .hero-nav .nav-item li {
-        margin: 0;
-        text-align: center;
-    }
-
-    .hero-nav .nav-item li a {
-        display: block;
-        padding: 10px;
-        color: white;
-        text-decoration: none;
-    }
-
-    .hero-nav .nav-toggle {
-        display: block;
-        cursor: pointer;
-        padding: 10px;
-        background-color: #2980b9;
-        color: white;
-        border: none;
-        text-align: left;
-    }
-
-    #nav-toggle {
-        display: none; /* Ocultar el checkbox */
-    }
-
-    #nav-toggle:checked + label + nav {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        z-index: 1;
-        margin-top: -267.5px
-    } 
-
-
     .search-section {
         max-width: 90%;
-        
     }
-    
+
     .search-input input[type="text"] {
         width: calc(100% - 20px);
-        /* Reduce el ancho del campo de entrada en pantallas más pequeñas */
     }
 
     .button[type="submit"] {
         padding: 12px 20px;
-        /* Ajusta el padding del botón en pantallas más pequeñas */
     }
+
     .menu-toggle {
         display: block;
         cursor: pointer;
@@ -552,38 +485,55 @@ footer i:hover {
         background-color: #007bff;
         color: white;
     }
-    
-    
 }
 
+/* Media Query para pantallas de hasta 480px de ancho */
 @media (max-width: 480px) {
     .hero-text {
         font-size: 18px;
-        /* Reduce el tamaño del texto en pantallas muy pequeñas */
     }
 
     .search-input input[type="text"] {
         width: calc(100% - 10px);
-        /* Reduce aún más el ancho del campo de entrada en pantallas muy pequeñas */
     }
 
     .button[type="submit"] {
         padding: 12px 15px;
-        /* Ajusta el padding del botón en pantallas muy pequeñas */
-    }
-}
-/* Estilos para tamaños de pantalla grandes */
-@media (min-width: 769px) {
-    .hero-nav .nav-toggle,
-    #nav-toggle,
-    #nav-toggle + label {
-        display: none !important;
     }
 }
 
 
-/*******ANIMACIONES**********/
+/* Estilos para tamaños de pantalla grandes (más de 768px) */
 
+
+@media (max-width: 768px) {
+    
+    .hero-nav {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .logo {
+        width: 300px;
+        height: auto;
+    }
+
+    .nav-item {
+        display: flex;
+        flex-wrap: wrap; /* Los elementos se envuelven en líneas en pantallas más pequeñas */
+    }
+
+    .nav-item li {
+        margin: 10px 0;
+    }
+
+    .nav-item a {
+        border: none; /* Elimina el borde en pantallas más pequeñas */
+        border-radius: 0; /* Esquinas cuadradas */
+    }
+}
+
+/* Animaciones */
 @keyframes underline {
     from {
         width: 0;
@@ -594,20 +544,21 @@ footer i:hover {
     }
 }
 
+/* Estilos de navegación con animación de subrayado al hacer hover */
 .nav-item a {
     position: relative;
     text-decoration: none;
     color: #333;
     transition: color 0.3s ease;
-}
 
-.nav-item a:hover::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: #007bff;
-    bottom: 0;
-    left: 0;
-    animation: underline 0.3s ease;
+    &:hover::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #007bffe5;
+        bottom: 0;
+        left: 0;
+        animation: underline 0.3s ease;
+    }
 }
